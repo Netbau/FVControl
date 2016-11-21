@@ -1,0 +1,76 @@
+<div class="row container">
+    <div class="col s12 teal white-text">
+        <center><h3>Mi Ruta</h3></center>
+    </div>
+    <div class="input-field col s12">
+        <select>
+            <option value="" disabled selected>Selecciona tu Cliente</option>
+            <option value="1">Cliente 1</option>
+            <option value="2">Cliente 2</option>
+            <option value="3">Cliente 3</option>
+        </select>
+        <label>Cliente</label>
+    </div>
+    <div class="input-field col s12">
+        <select>
+            <option value="" disabled selected>Selecciona La máquina</option>
+            <option value="1">Maquina 1</option>
+            <option value="2">Maquina 2</option>
+            <option value="3">Maquina 3</option>
+        </select>
+        <label>Maquina</label>
+    </div>
+    <div class="col s6 l3">
+        <input type="checkbox" class="filled-in" id="act1" checked="checked" />
+        <label for="act1">Reposición</label>
+    </div>
+    <div class="col s6 l3">
+        <input type="checkbox" class="filled-in" id="act2" checked="checked" />
+        <label for="act2">Limpieza</label>
+    </div>
+    <div class="col s6 l3">
+        <input type="checkbox" class="filled-in" id="act3" checked="checked" />
+        <label for="act3">Toma de datos</label>
+    </div>
+    <div class="col s6 l3">
+        <input type="checkbox" class="filled-in" id="act4" checked="checked" />
+        <label for="act4">Recaudación</label>
+    </div>
+</div>
+<div class="row container">
+    <form class="col s12">
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="textarea1" class="materialize-textarea"></textarea>
+                <label for="textarea1">Observaciones</label>
+            </div>
+        </div>
+    </form>
+    <div class="col s12 container">
+        <div class="col s5 offset-l1 offset-s1">
+            Notificar a Servicio Técnico?
+        </div>
+        <div class="col s5">
+            <div class="switch">
+                <label>
+                    No
+                    <input type="checkbox">
+                    <span class="lever"></span>
+                    Si
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row container">
+    <div class="col s12">
+        <a href="#" class="btn btn-large btn-block">Completar Visita</a>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $(".button-collapse").sideNav();
+        $('select').material_select();
+    });
+</script>

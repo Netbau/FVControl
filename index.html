@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Dashboard</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <!--Import Google Icon Font-->
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+
+        <!-- Compiled and minified JavaScript -->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+        <style>
+            header, main, footer{
+                padding-left: 255px;
+            }
+            .main{
+                padding-bottom: 0px;
+            }
+            .side-nav{
+                margin-top: 64px;
+            }
+
+            @media only screen and (max-width : 992px) {
+                header, main, footer{
+                    padding-left: 0;
+                }
+                .side-nav{
+                    margin-top: 0px;
+                }
+            }
+            .card {
+                margin-bottom: 0px;
+            }
+            .card-content{
+                padding-top: 10px !important;
+                padding-bottom: 10px !important;
+            }
+            .widget{
+                padding-bottom:5px !important;
+            }
+
+            .condensed td{
+                padding-top: 2px;
+                padding-bottom: 2px;
+            }
+            .side-nav a{
+                padding: 0 16px;
+            }
+            
+        </style>
+    </head>
+    <body class="grey lighten-3">
+        <!-- TOP NAV -->
+        <div class="navbar-fixed">
+            <nav class="grey lighten-5 blue-text">
+                <div class="nav-wraper">
+                    <a href="#" class="brand-logo"><img  class="responsive-img" src="img/Logo Fullvending tiny.png"></a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a href="sass.html" class=""><i class="material-icons grey-text">search</i></a></li>
+                        <li><a href="badges.html" class=""><i class="material-icons grey-text">view_module</i></a></li>
+                        <li><a href="collapsible.html" class=""><i class="material-icons grey-text">refresh</i></a></li>
+                        <li><a href="mobile.html" class=""><i class="material-icons grey-text">help</i></a></li>
+                    </ul>
+                </div>
+                <a href="#" data-activates="slide-out" class="button-collapse left grey-text"><i class="material-icons">menu</i></a>
+                <div class="progress">
+                    <div class="determinate blue darken-3" style="width: 100%"></div>
+                </div>
+            </nav>
+        </div>
+        <!-- TOP NAV -->
+        <!---  SIDE NAV -->
+        <ul id="slide-out" class="side-nav fixed blue">
+            <li>
+                <div class="card-panel blue darken-3 z-depth-1 no-padding" style="margin-top:0px;">
+                    <div class="row valign-wrapper">
+                        <div class="col s3">
+                            <img src="img/miperfil.jpg" alt="" class="circle responsive-img valign materialboxed"> <!-- notice the "circle" class -->
+                        </div>
+                        <div class="col s9">
+                            <!-- Dropdown Trigger -->
+                            <a class='dropdown-button btn btn-flat white grey-text tooltipped waves-effect waves-blue' data-beloworigin="true" data-position="right" data-tooltip="Opciones de usuario" href='#' data-activates='dropdown1'>
+                                CGONZB <i class="material-icons right">arrow_drop_down</i>
+                            </a>
+
+                            <!-- Dropdown Structure -->
+                            <ul id='dropdown1' class='dropdown-content'>
+                                <li><a href="#!" class="blue-text">Editar datos</a></li>
+                                <li><a href="#!" class="blue-text">Mensajes</a></li>
+                                <li  class="red darken-4"><a class="white-text" href="#!">Salir</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li><a href="#dashboard" class="white-text menu-item">Dashboard<i class="material-icons white-text">view_quilt</i></a></li>
+            <li><a href="#users" class="white-text menu-item">Usuarios<i class="material-icons white-text">supervisor_account</i></a></li>
+            <li><a href="#clients" class="white-text menu-item">Clientes<i class="material-icons white-text">work</i></a></li>
+            <li><a href="#ruta" class="white-text menu-item">Rutas<i class="material-icons white-text">navigation</i></a></li>
+            <li><a href="#!" class="white-text menu-item">Máquinas<i class="material-icons white-text">free_breakfast</i></a></li>
+            <li><a href="#!" class="white-text menu-item">Actividades<i class="material-icons white-text">done</i></a></li>
+            <li>
+                <ul class="collapsible collapsible-accordion">
+                    <li>
+                        <a class="collapsible-header  white-text"><i class="material-icons white-text">settings</i>Configuraciones<i class="material-icons right white-text">arrow_drop_down</i></a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li><a href="#!">First</a></li>
+                                <li><a href="#!">Second</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <!-- SIDENAV -->
+
+        <!-- CONTENT -->
+        <main class="grey lighten-3">  
+            <div class="row" id="content">
+
+            </div>
+        </main>
+        <!-- CONTENT -->
+
+
+    </body>
+    <script>
+        $(document).ready(function () {
+            /**
+             * Load Dashboard on init
+             */
+            $('#content').load('dashboard.html');
+
+            //init sidenav
+            $('.button-collapse').sideNav({
+                menuWidth: 250, // Default is 240
+                edge: 'left' // Choose the horizontal origin
+            }
+            );
+            $('.materialboxed').materialbox();
+
+            $('.menu-item').click(function () {
+                ref = $(this).attr('href').replace('#', '') + '.html';
+                $('.progress > div').toggleClass('determinate').toggleClass('indeterminate');
+                $('#content').load(ref, function () {
+                    $('.progress > div').toggleClass('determinate').toggleClass('indeterminate');
+                });
+            });
+        });
+    </script>
+</html>
