@@ -64,7 +64,7 @@
 </div>
 <div class="row container">
     <div class="col s12">
-        <a href="#" class="btn btn-large btn-block">Completar Visita</a>
+        <a href="#" id="sendEvent" class="btn btn-large btn-block">Completar Visita</a>
     </div>
 </div>
 
@@ -72,5 +72,14 @@
     $(document).ready(function () {
         $(".button-collapse").sideNav();
         $('select').material_select();
+
+        $('#sendEvent').click(function () {
+            navigator.geolocation.getCurrentPosition(function (location) {
+                lat = location.coords.latitude;
+                long = location.coords.longitude;
+                accuracy = location.coords.accuracy;
+                alert("lat: " + lat + " long: " + long + " acc: " + accuracy);
+            });
+        });
     });
 </script>
